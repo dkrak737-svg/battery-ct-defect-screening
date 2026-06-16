@@ -1,0 +1,7 @@
+ultralytics==8.4.68
+opencv-python-headless
+shapely
+numpy
+pillow
+anthropic
+huggingface_hub

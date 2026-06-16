@@ -1,0 +1,22 @@
+# Battery CT detection — full pipeline deps
+# Install on RunPod with:  pip install -r requirements.txt
+#
+# (RunPod PyTorch templates already include torch/cv2/numpy/etc.,
+#  so this list focuses on what's specifically needed.)
+
+# Vision pipeline
+ultralytics>=8.3.0          # YOLO11
+opencv-python>=4.8
+numpy>=1.24
+pillow>=10.0
+tqdm>=4.65
+shapely>=2.0               # seg 타일링 폴리곤 clip
+
+# Data / metrics
+pandas>=2.0
+
+# Week 2 (RAG + Claude) — uncomment when needed
+# langchain
+# chromadb
+# anthropic
+# streamlit

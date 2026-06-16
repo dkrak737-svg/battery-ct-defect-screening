@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "purpose": "배터리 CT 결함탐지 결과 → IATA/ICAO/국내 항공위험물 규정 매칭 → 조치 지침서 생성용 지식베이스",
+    "scope": "리튬배터리 관련 조항만 (lithium battery only)",
+    "sources": [
+      "IATA Battery Guidance Document 2026 (이하 IATA-BGD)",
+      "항공위험물운송기술기준 국토교통부고시 제2023-52호 (이하 KR-TS)",
+      "ICAO Doc 9284 Technical Instructions 2025-2026 Addendum No.1 (이하 ICAO-TI)"
+    ],
+    "defect_to_chunk": {
+      "swelling": ["c01", "c02", "c03", "c05", "c10"],
+      "porosity": ["c01", "c02", "c04", "c05", "c10"],
+      "resin_overflow": ["c01", "c02", "c04", "c10"],
+      "normal": "이상 없음 — 결함 미탐지 시 운송 제한 사유 없음. UN38.3 통과·SoC 등 일반요건 충족 전제하에 운송 가능. (No defect detected — no transport restriction applies under defect provisions.)"
+    }
+  },
+  "chunks": [
+    {
+      "id": "c01",
+      "source": "IATA-BGD",
+      "ref": "FAQ D.06 / Special Provision A154",
+      "title_ko": "손상·결함 리튬배터리의 항공운송 금지",
+      "title_en": "Damaged/defective lithium batteries forbidden for air transport",
+      "tags": ["forbidden", "damaged", "defective", "thermal_runaway", "short_circuit", "swelling", "porosity", "resin"],
+      "text_ko": "안전상의 이유로 결함이 있는 것으로 식별되었거나, 손상되어 위험한 발열(dangerous evolution of heat), 화재 또는 단락(short circuit)을 일으킬 가능성이 있는 리튬·소듐이온 배터리는 항공으로 운송이 금지된다(예: 안전상의 이유로 제조사에 반품되는 것). 이는 휴대폰·노트북·태블릿 등 장비에 장착된 셀·배터리에도 적용된다(특별조항 A154 참조).",
+      "text_en": "Lithium or sodium ion batteries, identified by the manufacturer as being defective for safety reasons, or that have been damaged, that have the potential of producing a dangerous evolution of heat, fire or short circuit are forbidden for transport by air (e.g. those being returned to the manufacturer for safety reasons). This applies also to cells or batteries installed inside equipment such as mobile phones, laptops or tablets (see Special Provision A154)."
+    },
+    {
+      "id": "c02",
+      "source": "KR-TS",
+      "ref": "제7조 (항공운송이 금지되는 위험물)",
+      "title_ko": "항공운송 금지 위험물",
+      "title_en": "Dangerous goods forbidden for air transport (KR)",
+      "tags": ["forbidden", "KR", "explosion", "thermal_runaway"],
+      "text_ko": "절대 운송금지 위험물은 정상적인 운송조건에서 폭발하기 쉽거나, 화염을 일으키거나 또는 독성·부식성·인화성 가스 혹은 증기를 방출할 가능성이 있는 물질로 별표1의 세로열 2,3번에 금지(FORBIDDEN)로 표기되어 있으며 어떠한 경우에도 운송이 금지된다. 면제 가능 위험물은 국토교통부장관의 허가를 받은 후 운송할 수 있다.",
+      "text_en": "Absolutely forbidden dangerous goods are substances liable to explode, generate flame, or emit toxic/corrosive/flammable gases or vapours under normal transport conditions, marked FORBIDDEN in columns 2/3 of Appendix 1, and are forbidden under any circumstances. Exemptible dangerous goods may be transported only after approval by the Minister of MOLIT."
+    },
+    {
+      "id": "c03",
+      "source": "KR-TS",
+      "ref": "제63조의2 (리튬배터리)",
+      "title_ko": "리튬배터리 운송 요건 (UN38.3·안전벤팅·단락방지·품질관리)",
+      "title_en": "Lithium battery transport requirements (UN38.3, venting, short-circuit protection, QC)",
+      "tags": ["UN38.3", "safety_venting", "short_circuit", "reverse_current", "quality_control", "swelling", "porosity"],
+      "text_ko": "UN3090·3091·3480·3481로 정의되는 셀·배터리는 다음 요건을 충족한 경우에만 운송할 수 있다: (1) 각 셀·배터리는 UN 매뉴얼 제3장 38.3 시험기준 통과, (2) 안전 벤팅 장치 장착 또는 준사고에서도 파손 방지 설계, (3) 외부 단락 방지 장치, (4) 병렬 연결 시 위험한 역전류 방지 장치(저항·퓨즈 등), (5) 설계·생산품질 관리 및 내부 단락 결함을 방지·탐지하는 공정관리를 포함한 품질관리 프로그램 하에서 생산.",
+      "text_en": "Cells and batteries defined as UN3090/3091/3480/3481 may be transported only if: (1) each passes UN Manual Part III 38.3 tests; (2) each is fitted with a safety venting device or designed to prevent violent rupture in incidents normally encountered; (3) each has external short-circuit protection; (4) batteries with cells in parallel have devices (resistors, fuses) preventing dangerous reverse current; (5) manufactured under a quality management program including process controls to prevent/detect internal short-circuit defects."
+    },
+    {
+      "id": "c04",
+      "source": "IATA-BGD",
+      "ref": "Classification / FAQ D.01",
+      "title_ko": "리튬배터리 분류 (Class 9, UN 번호)",
+      "title_en": "Lithium battery classification (Class 9, UN numbers)",
+      "tags": ["classification", "UN3480", "UN3481", "UN3090", "UN3091", "class9"],
+      "text_ko": "모든 리튬·소듐이온 배터리는 열폭주(thermal runaway) 위협의 존재로 인해 Class 9 위험물로 분류되며 DGR 요건의 적용을 받는다. UN3480(리튬이온 배터리 단독)/UN3481(장비 내장·동봉)/UN3090(리튬메탈 단독)/UN3091(리튬메탈 장비 내장·동봉). 일부가 Section II로 일부 표기·포장·서류 요건을 면제받더라도 여전히 위험물로 규제되며 사고 보고 등 다른 요건의 적용을 받는다.",
+      "text_en": "All lithium/sodium ion batteries are classified as Class 9 dangerous goods due to the threat of thermal runaway and are subject to the DGR. UN3480 (Li-ion alone)/UN3481 (in or with equipment)/UN3090 (Li-metal alone)/UN3091 (Li-metal in/with equipment). Even if eligible as Section II with some exemptions, they remain regulated dangerous goods subject to other requirements including occurrence reporting."
+    },
+    {
+      "id": "c05",
+      "source": "IATA-BGD",
+      "ref": "Restrictions / Special Provision A331",
+      "title_ko": "리튬이온·소듐이온 운송 제한 — SoC 30% 이하",
+      "title_en": "Li-ion/Na-ion transport restriction — SoC ≤30%",
+      "tags": ["state_of_charge", "30percent", "A331", "restriction"],
+      "text_ko": "모든 리튬이온 셀·배터리(UN3480) 및 소듐이온(UN3551)은 정격용량의 30%를 초과하지 않는 충전상태(SoC)로 운송하여야 한다. SoC 30% 초과 시 출발지국·운영국 당국의 서면 조건 승인(특별조항 A331)에 의해서만 운송 가능. SoC를 낮추면 열폭주 가능성이 감소한다.",
+      "text_en": "All Li-ion cells/batteries (UN3480) and Na-ion (UN3551) must be shipped at a state of charge (SoC) not exceeding 30% of rated capacity. Above 30% only with written approval of the States of Origin and Operator (SP A331). Reduced SoC lowers the potential for thermal runaway."
+    },
+    {
+      "id": "c06",
+      "source": "IATA-BGD",
+      "ref": "Prohibitions",
+      "title_ko": "여객기 화물 운송 금지 (UN3480/UN3090 단독)",
+      "title_en": "Forbidden as cargo on passenger aircraft (UN3480/UN3090 alone)",
+      "tags": ["passenger_aircraft", "cargo_aircraft_only", "CAO", "prohibition"],
+      "text_ko": "단독으로 운송되는 모든 리튬이온(UN3480)·리튬메탈(UN3090) 셀·배터리는 여객기 화물로 운송이 금지된다. PI965/968 Section IA·IB로 준비된 모든 포장물은 다른 요구 표기·라벨에 더해 'Cargo Aircraft Only(화물기 전용)' 라벨을 부착하여야 한다.",
+      "text_en": "All Li-ion (UN3480) and Li-metal (UN3090) cells/batteries shipped by themselves are forbidden as cargo on passenger aircraft. All packages prepared per PI965/968 Section IA/IB must bear a Cargo Aircraft Only label in addition to other required marks/labels."
+    },
+    {
+      "id": "c07",
+      "source": "IATA-BGD",
+      "ref": "Classification Flowcharts / DGR 3.9.2.6",
+      "title_ko": "UN38.3 시험 통과 필수 — 미통과 시 State Approval(A88)",
+      "title_en": "UN38.3 testing mandatory — if failed, only under State Approval (A88)",
+      "tags": ["UN38.3", "test", "prototype", "A88"],
+      "text_ko": "모든 셀·배터리는 UN 시험·판정기준 매뉴얼 Part III Subsection 38.3에 따라 시험되어야 한다(DGR 3.9.2.6). UN 시험 미통과 시 특별조항 A88에 따라 출발지국·운영국 당국의 승인 하에서만 운송 가능. 시제품(pre-production prototype) 및 연 100개 이하 소량생산은 PI910 요건 충족 시 화물기로 운송 가능.",
+      "text_en": "All cells/batteries must be tested per UN Manual of Tests and Criteria Part III Subsection 38.3 (DGR 3.9.2.6). If the UN test is not passed, transport is only possible under State Approval per SP A88. Pre-production prototypes and low-production runs (≤100/yr) may be carried on cargo aircraft if PI910 is met."
+    },
+    {
+      "id": "c08",
+      "source": "IATA-BGD",
+      "ref": "Lithium battery test summary / 38.3.5",
+      "title_ko": "리튬배터리 시험 요약서(Test Summary) 제공 의무",
+      "title_en": "Lithium battery test summary requirement",
+      "tags": ["test_summary", "38.3.5", "documentation"],
+      "text_ko": "버튼셀(회로기판 내장 포함)을 제외하고, 2003년 6월 30일 이후 제조된 셀·배터리 및 그것으로 구동되는 장비의 제조사·후속 유통사는 UN 매뉴얼 38.3.5에 명시된 시험 요약서를 요청 시 제공하여야 한다(웹사이트 QR/URL 제공으로 갈음 가능).",
+      "text_en": "Except button cells installed in equipment, manufacturers and subsequent distributors of cells/batteries (made after 30 June 2003) must make available the test summary per UN Manual 38.3.5 upon request (may be met via QR code/URL)."
+    },
+    {
+      "id": "c09",
+      "source": "ICAO-TI",
+      "ref": "Addendum No.1, Part 8 Table 8-1 / Part 1 §2.2",
+      "title_ko": "승객 휴대 리튬배터리 한도 (100Wh/160Wh, 2g/8g, 파워뱅크)",
+      "title_en": "Passenger lithium battery limits (100/160Wh, 2/8g, power banks)",
+      "tags": ["passenger", "carry_on", "watt_hour", "power_bank", "spare"],
+      "text_ko": "승객·승무원 휴대 배터리: 리튬이온 100Wh 이하 자유, 100~160Wh는 운영자 승인(1인 2개), 리튬메탈 2g 이하(의료기기 8g 승인). 여분 배터리·파워뱅크는 휴대수하물로만, 단락방지 개별포장. 파워뱅크는 기내 충전 금지, 1인 2개. 모든 배터리는 UN38.3 통과 필수.",
+      "text_en": "Passenger/crew batteries: Li-ion ≤100Wh allowed; 100–160Wh with operator approval (2 per person); Li-metal ≤2g (≤8g medical with approval). Spare batteries/power banks carry-on only, individually short-circuit protected. Power banks not recharged in-flight, 2 per person. All must pass UN38.3."
+    },
+    {
+      "id": "c10",
+      "source": "synthesis",
+      "ref": "결함 ↔ 규정 위험요소 매핑 (프로젝트 자체 정의)",
+      "title_ko": "CT 탐지 결함의 규정상 위험 분류",
+      "title_en": "Mapping of CT-detected defects to regulatory hazard",
+      "tags": ["swelling", "porosity", "resin", "mapping", "thermal_runaway", "short_circuit"],
+      "text_ko": "본 시스템이 탐지하는 내부결함의 규정상 의미: (1) swelling(팽창) = 가스 축적·열폭주 임박 → IATA D.06 'dangerous evolution of heat'에 직접 해당, 운송 금지 사유. (2) porosity(기공) = 전극 내부 결함·내부 단락 잠재 → D.06 'short circuit' 위험 + 제63조의2 단락방지·내부단락 결함방지 요건 미충족. (3) resin overflow(레진 넘침) = 제조 결함(defective) → D.06 'defective for safety reasons' 및 제63조의2 품질관리 요건 위반. 세 결함 모두 탐지 시 해당 배터리는 손상·결함 배터리로 간주, 항공운송 부적합으로 판정.",
+      "text_en": "Regulatory meaning of internal defects this system detects: (1) swelling = gas accumulation / imminent thermal runaway → directly matches IATA D.06 'dangerous evolution of heat', a forbidden ground. (2) porosity = electrode internal defect / latent internal short circuit → D.06 'short circuit' hazard + non-compliance with KR-TS 63-2 short-circuit/internal-defect prevention. (3) resin overflow = manufacturing defect → D.06 'defective for safety reasons' and KR-TS 63-2 QC violation. When any of these are detected, the battery is treated as damaged/defective and judged unsuitable for air transport."
+    }
+  ]
+}

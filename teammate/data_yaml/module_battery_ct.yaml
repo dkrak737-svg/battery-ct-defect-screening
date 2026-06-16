@@ -1,0 +1,5 @@
+path: d:/shinbaram/data/yolo_module
+train: images/train
+val: images/val
+nc: 2
+names: ['porosity', 'resin overflow']

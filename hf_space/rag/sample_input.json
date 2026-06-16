@@ -1,0 +1,6 @@
+[
+  {"battery_id": "module_402", "form": "module", "defects": ["porosity", "resin_overflow"]},
+  {"battery_id": "module_311", "form": "module", "defects": ["swelling"]},
+  {"battery_id": "cell_r07", "form": "cell", "defects": ["porosity"]},
+  {"battery_id": "module_500", "form": "module", "defects": []}
+]
