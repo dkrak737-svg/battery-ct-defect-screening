@@ -1,0 +1,6 @@
+ultralytics==8.4.68
+timm
+torchvision
+opencv-python-headless
+anthropic
+huggingface_hub
