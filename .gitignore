@@ -6,11 +6,14 @@
 *_rsa
 id_ed25519*
 
-# ===== 모델 가중치 (Git 말고 HF/LFS) =====
+# ===== 모델 가중치 =====
+# 기본은 무시하되, 배포용 weights/ 폴더의 .pt 는 포함(~33MB, 소형이라 일반 git).
 *.pt
 *.onnx
 *.engine
 *.torchscript
+!weights/
+!weights/*.pt
 
 # ===== 대용량 데이터/라벨 (원본은 AI-Hub 약관상 금지) =====
 *.tar
